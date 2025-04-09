@@ -1,0 +1,87 @@
+import Close from "../../icons/Close";
+import Checkmark from "../../icons/Checkmark";
+import { useState } from "react";
+import { useModalContext } from "../../../contexts/ModalContext";
+
+const initialState = { username: "", password: "" };
+
+export default function SignUpModal() {
+  const { setActiveModal } = useModalContext();
+
+  const [checked, setChecked] = useState(false);
+  const [inputs, setInputs] = useState(initialState);
+
+  function handleInputs(e) {
+    setInputs((prevInputs) => {
+      return {
+        ...prevInputs,
+        [e.target.name]: e.target.value,
+      };
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (checked) {
+      console.log(inputs);
+      setInputs(initialState);
+      setActiveModal("");
+    }
+  }
+
+  return (
+    <section className="grid max-w-3xl grid-cols-2">
+      <div className="bg-primary-1300 flex flex-col justify-center gap-y-4 bg-[url('../src/assets/Noise.webp')] bg-repeat p-10 text-center">
+        <h4 className="text-primary-50 text-4xl/12 font-bold tracking-tight">
+          Welcome Back!
+        </h4>
+        <p className="text-primary-100 text-lg/8">
+          Continue from where you left off.
+        </p>
+      </div>
+      <div className="bg-primary-1500 flex flex-col justify-between gap-y-24 bg-[url('../src/assets/Noise.webp')] bg-repeat p-10">
+        <button
+          className="border-primary-75 hover:bg-primary-75 group transition-properties ml-auto w-fit cursor-pointer rounded-2xl border-2 p-3"
+          onClick={() => setActiveModal("")}
+        >
+          <Close
+            className="stroke-primary-75 group-hover:stroke-primary-1300 transition-properties"
+            width={2}
+          />
+        </button>
+        <div className="text-primary-50 flex flex-col gap-y-6 text-lg/8 font-semibold tracking-tight">
+          <label>
+            Username
+            <input
+              name="text"
+              type="text"
+              className="bg-primary-75 placeholder-primary-1500 text-primary-1300 mt-2 block w-full rounded-full px-8 py-4 font-normal placeholder:text-base placeholder:font-light placeholder:opacity-20"
+              placeholder="janedoe"
+              onChange={handleInputs}
+              value={inputs.username}
+            />
+          </label>
+          <label>
+            Password
+            <input
+              name="password"
+              type="password"
+              className="bg-primary-75 placeholder-primary-1500 text-primary-1300 mt-2 block w-full rounded-full px-8 py-4 font-normal placeholder:text-base placeholder:font-light placeholder:opacity-20"
+              placeholder="************"
+              onChange={handleInputs}
+              value={inputs.password}
+            />
+          </label>
+        </div>
+        <div>
+          <button
+            className="bg-primary-500 primary-glow-hover transition-properties w-full cursor-pointer rounded-full py-4 text-lg/8"
+            onClick={handleSubmit}
+          >
+            Login
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}

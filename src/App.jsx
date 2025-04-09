@@ -15,23 +15,39 @@ import Logos from "./components/sections/Logos";
 import Features from "./components/sections/Features";
 import FAQs from "./components/sections/FAQs/FAQs";
 import Testimonials from "./components/sections/testimonials/Testimonials";
+import Footer from "./components/sections/Footer";
+import Modal from "./components/sections/Modal/Modal";
+import SignUpModal from "./components/sections/Modal/SignUpModal";
+import LoginModal from "./components/sections/Modal/LoginModal";
+import { ModalContextProvider } from "./contexts/ModalContext";
 
 const App = () => {
   return (
-    <Page>
-      <Header>
-        <Navigation />
-        <Hero />
-        <Reviews />
-      </Header>
+    <ModalContextProvider>
+      <Page>
+        <Header>
+          <Navigation />
+          <Hero />
+          <Reviews />
+        </Header>
 
-      <Main>
-        <Logos />
-        <Features />
-        <FAQs />
-        <Testimonials />
-      </Main>
-    </Page>
+        <Main>
+          <Logos />
+          <Features />
+          <FAQs />
+          <Testimonials />
+        </Main>
+
+        <Footer />
+
+        <Modal modal="sign-up">
+          <SignUpModal />
+        </Modal>
+        <Modal modal="login">
+          <LoginModal />
+        </Modal>
+      </Page>
+    </ModalContextProvider>
   );
 };
 
