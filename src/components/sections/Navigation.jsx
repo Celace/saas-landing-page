@@ -2,17 +2,18 @@ import React from "react";
 import Logo from "../icons/Logo";
 import { navigationLinks } from "../../utils/content";
 import { useModalContext } from "../../contexts/ModalContext";
+import MobileMenuIcon from "./MobileMenu/MobileMenuIcon";
 
 const Navigation = () => {
   const { setActiveModal } = useModalContext();
   return (
-    <nav className="text-primary-50 m-auto flex max-w-[90rem] justify-between px-24 text-lg/8 font-light max-xl:px-18 max-xl:text-base/loose">
+    <nav className="text-primary-50 m-auto flex max-w-[90rem] justify-between px-24 text-lg/8 font-light max-xl:px-18 max-xl:text-base/loose max-lg:px-8">
       <a href="#" className="flex items-center gap-x-3">
         <Logo className="stroke-primary-500 h-6" width={5} />
         <p className="text-2xl font-bold tracking-tight">NoteFlow</p>
       </a>
 
-      <ul className="flex items-center gap-x-8 max-xl:gap-x-6">
+      <ul className="flex items-center gap-x-8 max-xl:gap-x-6 max-lg:hidden">
         {navigationLinks.map((link) => (
           <li key={link.id}>
             <a
@@ -25,7 +26,7 @@ const Navigation = () => {
         ))}
       </ul>
 
-      <div className="flex items-center gap-x-3">
+      <div className="flex items-center gap-x-3 max-lg:hidden">
         <button
           className="border-primary-50 transition-properties hover:bg-primary-50 hover:text-primary-1300 box-border cursor-pointer rounded-full border-1 px-8 py-3.5 text-lg/8 font-normal max-xl:px-6 max-xl:py-3 max-xl:text-base/loose"
           onClick={() => setActiveModal("login")}
@@ -39,6 +40,8 @@ const Navigation = () => {
           Get Started
         </button>
       </div>
+
+      <MobileMenuIcon />
     </nav>
   );
 };

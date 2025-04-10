@@ -21,7 +21,7 @@ const FAQ = ({ question, activeQuestion, handleQuestionClick }) => {
           />
         </div>
 
-        <p className="text-primary-50 mr-auto pr-4 text-left text-xl/loose font-medium tracking-tight max-xl:text-lg/12">
+        <p className="text-primary-50 mr-auto pr-4 text-left text-xl/loose font-medium tracking-tight max-xl:text-lg/12 max-lg:text-lg/8 max-lg:font-semibold">
           {question.question}
         </p>
         <div className="flex h-12 w-12 shrink-0 items-center justify-center">
@@ -34,7 +34,7 @@ const FAQ = ({ question, activeQuestion, handleQuestionClick }) => {
         </div>
       </button>
       <motion.p
-        className="text-primary-100 pt-0 pr-14 pl-20 text-lg/8 font-light"
+        className="text-primary-100 pt-0 pr-14 pl-20 text-lg/8 font-light max-lg:text-base/loose"
         initial={{ opacity: 0, maxHeight: 0, visibility: "hidden" }}
         animate={
           activeQuestion === question.id
