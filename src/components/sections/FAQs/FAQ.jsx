@@ -21,7 +21,7 @@ const FAQ = ({ question, activeQuestion, handleQuestionClick }) => {
           />
         </div>
 
-        <p className="text-primary-50 mr-auto pr-4 text-left text-xl/loose font-medium tracking-tight">
+        <p className="text-primary-50 mr-auto pr-4 text-left text-xl/loose font-medium tracking-tight max-xl:text-lg/12">
           {question.question}
         </p>
         <div className="flex h-12 w-12 shrink-0 items-center justify-center">

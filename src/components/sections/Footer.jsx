@@ -5,7 +5,7 @@ import { footerCols } from "../../utils/content";
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-bottom">
-      <div className="m-auto flex max-w-[90rem] justify-between px-24 py-30">
+      <div className="m-auto flex max-w-[90rem] justify-between px-24 py-30 max-xl:px-16 max-xl:py-20">
         <div>
           <a href="#" className="flex items-center gap-x-3">
             <Logo
@@ -19,7 +19,7 @@ const Footer = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-[repeat(4,max-content)] gap-x-24">
+        <div className="grid grid-cols-[repeat(4,max-content)] gap-x-24 max-xl:gap-x-18">
           {footerCols.map((col) => (
             <div key={col.id}>
               <p className="text-primary-50 mb-8 text-xl/loose font-semibold">
@@ -30,7 +30,7 @@ const Footer = () => {
                   <li key={i} className="cursor-pointer">
                     <a
                       href="#"
-                      className="text-primary-50 hover:text=primary-500 transition-properties text-md/8 font-light"
+                      className="text-primary-50 hover:text=primary-500 transition-properties text-md/8 font-light max-xl:text-base/loose"
                     >
                       {link}
                     </a>
