@@ -7,10 +7,16 @@ import MobileMenuIcon from "./MobileMenu/MobileMenuIcon";
 const Navigation = () => {
   const { setActiveModal } = useModalContext();
   return (
-    <nav className="text-primary-50 m-auto flex max-w-[90rem] justify-between px-24 text-lg/8 font-light max-xl:px-18 max-xl:text-base/loose max-lg:px-8">
-      <a href="#" className="flex items-center gap-x-3">
-        <Logo className="stroke-primary-500 h-6" width={5} />
-        <p className="text-2xl font-bold tracking-tight">NoteFlow</p>
+    <nav className="text-primary-50 m-auto flex max-w-[90rem] justify-between px-24 text-lg/8 font-light max-xl:px-18 max-xl:text-base/loose max-lg:px-8 max-md:px-6">
+      <a href="#" className="flex items-center gap-x-3 max-md:gap-x-2">
+        <Logo
+          className="stroke-primary-500 h-6 max-md:h-5"
+          width={5}
+          alt="Noteflow logo icon"
+        />
+        <p className="text-2xl font-bold tracking-tighter max-md:tracking-tight">
+          NoteFlow
+        </p>
       </a>
 
       <ul className="flex items-center gap-x-8 max-xl:gap-x-6 max-lg:hidden">
