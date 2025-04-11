@@ -12,7 +12,7 @@ const Testimonials = () => {
           <p className="text-primary-1300 bg-primary-500 primary-glow w-min rounded-full px-4 py-2 text-base/8 max-lg:mb-8">
             Testimonials
           </p>
-          <h2 className="text-primary-50 text-center text-6xl/18 font-semibold tracking-tighter max-xl:text-5xl/16 max-lg:mb-4 max-lg:text-4xl/11 max-lg:tracking-tight max-md:text-4xl/11">
+          <h2 className="text-primary-50 text-center text-6xl/18 font-semibold tracking-tighter max-xl:text-5xl/16 max-lg:mb-4 max-lg:text-4xl/11 max-lg:tracking-tight max-md:text-4xl/11 max-sm:text-3xl/9 max-sm:tracking-tighter">
             What our AI-powered <br />
             notetakers have to say
           </h2>

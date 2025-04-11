@@ -12,6 +12,10 @@ const MobileMenu = () => {
     setMobileMenuOpened(false);
     setActiveModal("sign-up");
   }
+  function handleLogin() {
+    setMobileMenuOpened(false);
+    setActiveModal("login");
+  }
 
   return (
     <motion.div
@@ -59,7 +63,10 @@ const MobileMenu = () => {
         </div>
 
         <div className="flex flex-col gap-y-3">
-          <button className="border-primary-50 transition-properties text-primary-50 hover:bg-primary-50 hover:text-primary-1300 box-border cursor-pointer rounded-full border-2 px-6 py-3 text-base/loose">
+          <button
+            className="border-primary-50 transition-properties text-primary-50 hover:bg-primary-50 hover:text-primary-1300 box-border cursor-pointer rounded-full border-2 px-6 py-3 text-base/loose"
+            onClick={handleLogin}
+          >
             Login
           </button>
           <button
